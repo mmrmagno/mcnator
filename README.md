@@ -42,33 +42,29 @@ Getting Started
 ### Installation
 
 1.  **Clone the Repository**
-
-    
-    ```sh git clone https://github.com/yourusername/mcdiscbot.git
+ 
+    ```sh
+    git clone https://github.com/yourusername/mcdiscbot.git
     cd mcdiscbot
     ```
 
 2.  **Install the Required Libraries**
 
-    sh
+    ```sh
+    pip install discord.py pillow
+    ```
 
-    Copy code
-
-    `pip install discord.py pillow`
-
-3.  **Configure Your Bot**
+4.  **Configure Your Bot**
 
     -   Open `bot.py` in a text editor.
     -   Replace `YOUR_BOT_TOKEN` with your actual Discord bot token.
     -   Replace `CHANNEL_ID` with the ID of the channel where you want to send notifications.
     -   Optionally, update `COORDS_FILE` to specify a different path for storing coordinates.
-4.  **Run the Bot**
+5.  **Run the Bot**    
 
-    sh
-
-    Copy code
-
-    `python3 bot.py`
+    ```sh
+    python3 bot.py
+    ```
 
 Commands
 --------
@@ -79,11 +75,9 @@ Commands
 
 **Usage**:
 
-sh
-
-Copy code
-
-`/slime 123456 100 64 200`
+```sh
+/slime 123456 100 64 200
+```
 
 ### /village `<seed> <x> <y> <z>`
 
@@ -91,11 +85,9 @@ Copy code
 
 **Usage**:
 
-sh
-
-Copy code
-
-`/village 123456 100 64 200`
+```sh
+/village 123456 100 64 200
+```
 
 ### /coords `<place>`
 
@@ -103,11 +95,10 @@ Copy code
 
 **Usage**:
 
-sh
 
-Copy code
-
-`/coords home`
+```sh
+/coords home
+```
 
 ### /roll `[min] [max]`
 
@@ -115,11 +106,9 @@ Copy code
 
 **Usage**:
 
-sh
-
-Copy code
-
-`/roll 1 100`
+```sh
+/roll 1 100
+```
 
 ### /commands
 
@@ -127,11 +116,9 @@ Copy code
 
 **Usage**:
 
-sh
-
-Copy code
-
-`/commands`
+```sh
+/commands
+```
 
 Real-time Server Monitoring
 ---------------------------
@@ -152,11 +139,6 @@ Contributing
 ------------
 
 We welcome contributions! Feel free to submit issues, fork the repository, and send pull requests. Your contributions can help make McNator even better.
-
-License
--------
-
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 About the Developer
 -------------------
