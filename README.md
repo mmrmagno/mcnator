@@ -1,73 +1,166 @@
-# McNator
+McNator 
+=====================
 
-McNator is a Discord bot for monitoring and interacting with your Minecraft server. The bot provides various commands to track player activity, find slime chunks, locate village chunks, and roll dice.
+Introduction
+------------
 
-## Features
+Welcome to McNator! McNator is a powerful Discord bot designed to enhance your Minecraft server experience. Developed by **mmrmagno aka Marc**, this bot provides real-time server monitoring, coordinates tracking, and special chunk mapping for slime and village chunks. McNator also includes a fun dice roll feature for random number generation.
 
-- Real-time server monitoring: player join/leave notifications, achievements, deaths, and teleports.
+Features
+--------
 
-- Display slime chunks around specified coordinates.
+### Real-time Server Monitoring
 
-- Display village chunks around specified coordinates.
+-   **Player Join/Leave Notifications**: Get notified when players join or leave your server.
+-   **Achievements**: Track and announce player achievements.
+-   **Deaths**: Get notifications when a player dies, including the cause of death.
+-   **Teleports**: Monitor teleport activities with exact coordinates.
+-   **Server Start/Stop Notifications**: Know when your server starts or stops.
 
-- Retrieve saved coordinates for places.
+### Chunk Mapping
 
-- Roll a random number within a specified range.
+-   **Slime Chunks**: Visualize slime chunks around specified coordinates.
+-   **Village Chunks**: Identify village chunks around specified coordinates.
 
-## Requirements
+### Coordinates Tracking
 
-- Python 3.7+
+-   **Save and Retrieve Coordinates**: Save important places and retrieve their coordinates on demand.
 
-- `discord.py` library
+### Dice Roll
 
-- `Pillow` library
+-   **Random Number Generation**: Roll a random number between a specified range or the default range (1-100).
 
-## Installation
+Getting Started
+---------------
 
-1\. Clone the repository:
+### Requirements
 
-    ```sh
+-   Python 3.7+
+-   `discord.py` library
+-   `Pillow` library
 
-    git clone https://github.com/yourusername/mcdiscbot.git
+### Installation
 
-    cd mcdiscbot
+1.  **Clone the Repository**
 
-    ```
+    sh
 
-2\. Install the required libraries:
+    Copy code
 
-    ```sh
+    `git clone https://github.com/yourusername/mcdiscbot.git
+    cd mcdiscbot`
 
-    pip install discord.py pillow
+2.  **Install the Required Libraries**
 
-    ```
+    sh
 
-3\. Configure your bot:
+    Copy code
 
-    - Open `bot.py` in a text editor.
+    `pip install discord.py pillow`
 
-    - Replace `YOUR_BOT_TOKEN` with your actual Discord bot token.
+3.  **Configure Your Bot**
 
-    - Replace `CHANNEL_ID` with the ID of the channel where you want to send notifications.
+    -   Open `bot.py` in a text editor.
+    -   Replace `YOUR_BOT_TOKEN` with your actual Discord bot token.
+    -   Replace `CHANNEL_ID` with the ID of the channel where you want to send notifications.
+    -   Optionally, update `COORDS_FILE` to specify a different path for storing coordinates.
+4.  **Run the Bot**
 
-    - Optionally, update `COORDS_FILE` to specify a different path for storing coordinates.
+    sh
 
-4\. Run the bot:
+    Copy code
 
-    ```sh
+    `python3 bot.py`
 
-    python3 bot.py
-
-    ```
-
-## Commands
+Commands
+--------
 
 ### /slime `<seed> <x> <y> <z>`
 
-Display a map highlighting slime chunks around the specified coordinates for the given seed.
+**Description**: Display a map highlighting slime chunks around the specified coordinates for the given seed.
 
-**Usage Example:**
+**Usage**:
 
-```sh
+sh
 
-/slime 123456 100 64 200
+Copy code
+
+`/slime 123456 100 64 200`
+
+### /village `<seed> <x> <y> <z>`
+
+**Description**: Display a map highlighting village chunks around the specified coordinates for the given seed.
+
+**Usage**:
+
+sh
+
+Copy code
+
+`/village 123456 100 64 200`
+
+### /coords `<place>`
+
+**Description**: Retrieve the coordinates for a saved place.
+
+**Usage**:
+
+sh
+
+Copy code
+
+`/coords home`
+
+### /roll `[min] [max]`
+
+**Description**: Roll a random number between `min` and `max` (default range is 1-100).
+
+**Usage**:
+
+sh
+
+Copy code
+
+`/roll 1 100`
+
+### /commands
+
+**Description**: List all available commands and their descriptions.
+
+**Usage**:
+
+sh
+
+Copy code
+
+`/commands`
+
+Real-time Server Monitoring
+---------------------------
+
+McNator monitors the Minecraft server log and sends notifications for various events:
+
+-   **Player Join/Leave**: Notifies when players join or leave the server.
+-   **Achievements**: Announces player achievements.
+-   **Deaths**: Sends notifications for player deaths along with the cause.
+-   **Teleports**: Logs teleport activities with coordinates.
+-   **Server Start/Stop**: Alerts when the server starts or stops.
+
+### Configuration
+
+**Server Log Path**: Update the `log_file_path` variable in the `monitor_minecraft_logs()` function to the path of your Minecraft server log file.
+
+Contributing
+------------
+
+We welcome contributions! Feel free to submit issues, fork the repository, and send pull requests. Your contributions can help make McNator even better.
+
+License
+-------
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+About the Developer
+-------------------
+
+Developed by [mmrmagno aka Marc](https://github.com/mmrmagno). For any inquiries or support, feel free to reach out on GitHub.
