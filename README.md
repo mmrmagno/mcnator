@@ -43,12 +43,10 @@ Getting Started
 
 1.  **Clone the Repository**
 
-    sh
-
-    Copy code
-
-    `git clone https://github.com/yourusername/mcdiscbot.git
-    cd mcdiscbot`
+    
+    ```sh git clone https://github.com/yourusername/mcdiscbot.git
+    cd mcdiscbot
+    ```
 
 2.  **Install the Required Libraries**
 
