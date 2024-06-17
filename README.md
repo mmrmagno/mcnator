@@ -53,7 +53,7 @@ Getting Started
 2.  **Install the Required Libraries**
 
     ```sh
-    pip install discord.py pillow
+    pip -r install requirements.txt
     ```
 
 4.  **Configure Your Bot**
