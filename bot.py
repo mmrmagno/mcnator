@@ -6,8 +6,12 @@ import random
 from discord.ext import commands
 from PIL import Image, ImageDraw, ImageFont
 
-TOKEN = 'YOUR DISCORD BOT TOKEN'
-CHANNEL_ID = YOUR DISCORD CHANNEL ID 
+# Load token and channel ID from config.json
+with open('config.json') as config_file:
+    config = json.load(config_file)
+
+TOKEN = config['TOKEN']
+CHANNEL_ID = config['CHANNEL_ID']
 COORDS_FILE = 'coords.json'
 
 intents = discord.Intents.default()
@@ -20,6 +24,7 @@ bot = commands.Bot(command_prefix='/', intents=intents)
 async def on_ready():
     print(f'Logged in as {bot.user}')
     bot.loop.create_task(monitor_minecraft_logs())
+    await bot.tree.sync()  # Ensure the commands are registered
 
 def load_coords():
     try:
@@ -250,4 +255,3 @@ async def roll(ctx, min: int = 1, max: int = 100):
         await ctx.send(embed=embed)
 
 bot.run(TOKEN)
-
