@@ -7,8 +7,9 @@ services:
     environment:
       EULA: "TRUE"
       ENABLE_RCON: "true"
-      RCON_PASSWORD: "YOUR_RCON_PASSWORD"
+      RCON_PASSWORD: "YOUR RCON PASSWORD HERE" 
       VERSION: "LATEST"
+      MAX_TICK_TIME: -1
     volumes:
       - ./data:/data
     networks:
@@ -16,13 +17,15 @@ services:
       - proxy
     restart: unless-stopped
 
-  discord-bot:
+  mcnator:
     build: .
-    container_name: discord-bot
+    container_name: mcnator 
     environment:
-      TOKEN: "YOUR_DISCORD_BOT_TOKEN"
-      CHANNEL_ID: "YOUR_DISCORD_CHANNEL_ID"
-      RCON_PASSWORD: "YOUR_RCON_PASSWORD"
+      TOKEN: "YOUR DISCORD TOKEN HERE" 
+      CHANNEL_ID: YOUR CHANEL ID HERE 
+      RCON_PASSWORD: "YOUR RCON PASSWORD HERE" 
+    volumes:
+      - ./data/logs:/app/logs:ro
     networks:
       - minecraft_default
     restart: unless-stopped
