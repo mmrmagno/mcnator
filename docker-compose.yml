@@ -1,0 +1,34 @@
+services:
+  minecraft-server:
+    image: itzg/minecraft-server:latest
+    container_name: minecraft-server
+    ports:
+      - "25565:25565"
+    environment:
+      EULA: "TRUE"
+      ENABLE_RCON: "true"
+      RCON_PASSWORD: "YOUR_RCON_PASSWORD"
+      VERSION: "LATEST"
+    volumes:
+      - ./data:/data
+    networks:
+      - minecraft_default
+      - proxy
+    restart: unless-stopped
+
+  discord-bot:
+    build: .
+    container_name: discord-bot
+    environment:
+      TOKEN: "YOUR_DISCORD_BOT_TOKEN"
+      CHANNEL_ID: "YOUR_DISCORD_CHANNEL_ID"
+      RCON_PASSWORD: "YOUR_RCON_PASSWORD"
+    networks:
+      - minecraft_default
+    restart: unless-stopped
+
+networks:
+  minecraft_default:
+    driver: bridge
+  proxy:
+    external: true
