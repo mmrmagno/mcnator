@@ -4,7 +4,7 @@ McNator
 Introduction
 ------------
 
-  ![McNator Logo](https://www.marc-os.com/src/banner-bot.png)
+  
 
 Welcome to McNator! McNator is a powerful Discord bot designed to enhance your Minecraft server experience. Developed by **mmrmagno aka Marc**, this bot provides real-time server monitoring, coordinates tracking, and special chunk mapping for slime and village chunks. McNator also includes a fun dice roll feature for random number generation.
 
